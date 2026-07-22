@@ -15,11 +15,11 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Proyecto ABP Inclusivo",
   description:
-    "Portal del proyecto de innovacion sobre prototipos tecnologicos para favorecer la inclusion educativa de alumnado con discapacidad auditiva.",
+    "Portal del proyecto de innovación sobre prototipos tecnológicos para favorecer la inclusión educativa de alumnado con discapacidad auditiva.",
   openGraph: {
     title: "Proyecto ABP Inclusivo",
     description:
-      "Metodologia, cronograma, evaluacion y evidencias digitales del proyecto de innovacion.",
+      "Metodología, cronograma, evaluación y evidencias digitales del proyecto de innovación.",
     images: ["/cronograma.png"],
   },
   icons: {
@@ -34,7 +34,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="es">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

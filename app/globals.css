@@ -204,7 +204,7 @@ h3 {
   transform: translateY(-1px);
 }
 
-.hero-panel,
+.cover-visual,
 .resource-card {
   overflow: hidden;
   background: var(--panel);
@@ -213,13 +213,81 @@ h3 {
   box-shadow: 0 28px 70px rgba(23, 33, 29, 0.12);
 }
 
-.hero-panel img,
-.resource-card img {
-  width: 100%;
-  max-height: 520px;
-  object-fit: cover;
-  object-position: top;
-  border-bottom: 1px solid var(--line);
+.cover-visual {
+  position: relative;
+  min-height: 560px;
+  padding: 22px;
+}
+
+.cover-visual::before {
+  content: "";
+  position: absolute;
+  inset: 22px;
+  border: 1px solid rgba(15, 118, 110, 0.18);
+  border-radius: 7px;
+  pointer-events: none;
+}
+
+.sign-stack {
+  position: relative;
+  height: 386px;
+  margin-bottom: 18px;
+}
+
+.sign-stack img {
+  position: absolute;
+  width: 58%;
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: 0 18px 45px rgba(23, 33, 29, 0.12);
+}
+
+.sign-main {
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.sign-small {
+  width: 42% !important;
+}
+
+.sign-small-a {
+  left: 0;
+  bottom: 26px;
+}
+
+.sign-small-b {
+  right: 0;
+  bottom: 0;
+}
+
+.cover-note {
+  position: relative;
+  display: grid;
+  gap: 8px;
+  padding: 18px;
+  background: #f6faf5;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+}
+
+.cover-note span {
+  color: var(--teal);
+  font-size: 0.76rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.cover-note strong {
+  font-size: 1.5rem;
+}
+
+.cover-note p {
+  margin-bottom: 0;
+  color: var(--muted);
+  line-height: 1.55;
 }
 
 .panel-caption {
@@ -408,12 +476,38 @@ h3 {
 }
 
 .resource-card {
-  padding-bottom: 18px;
+  padding: 22px;
 }
 
 .resource-card .full {
-  width: calc(100% - 36px);
-  margin: 18px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.text-resource h3 {
+  font-size: 1.6rem;
+  line-height: 1.12;
+}
+
+.text-resource > p:not(.eyebrow) {
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.sign-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.sign-gallery img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 8px;
 }
 
 .cta {
@@ -449,6 +543,10 @@ h3 {
     grid-template-columns: 1fr;
   }
 
+  .cover-visual {
+    min-height: 500px;
+  }
+
   .feature-grid,
   .phase-grid,
   .evaluation-grid {
@@ -479,6 +577,14 @@ h3 {
 
   .actions {
     flex-direction: column;
+  }
+
+  .sign-stack {
+    height: 330px;
+  }
+
+  .sign-gallery {
+    grid-template-columns: 1fr;
   }
 
   .primary-button,
