@@ -14,6 +14,13 @@ const sortByWord = (first: LscEntry, second: LscEntry) =>
 
 const featuredEntries: LscEntry[] = [
   {
+    word: "Adiós",
+    description:
+      "Mano en '5' con la palma hacia adelante y la punta de los dedos hacia arriba se mueve hacia los lados.",
+    page: 0,
+    image: "/lsc-featured/adios.png",
+  },
+  {
     word: "Hola",
     description:
       "Mano en '5' con la palma hacia adentro. Dirige la mano hacia el interlocutor y eleva ligeramente las cejas.",
@@ -81,6 +88,69 @@ const featuredEntries: LscEntry[] = [
       "La mano en 'B', frente a la cara, gira hacia los lados varias veces.",
     page: 0,
     image: "/lsc-featured/bano.png",
+  },
+  {
+    word: "Buenas noches",
+    description:
+      "La mano en '5' toca el mentón y se mueve hacia la palma de la mano contraria. Luego las manos se cruzan al tiempo que se cierran.",
+    page: 0,
+    image: "/lsc-featured/buenas-noches.png",
+  },
+  {
+    word: "Buenas tardes",
+    description:
+      "La mano en '5' toca el mentón y se mueve hacia la palma de la mano contraria. Luego las manos se colocan una sobre la otra.",
+    page: 0,
+    image: "/lsc-featured/buenas-tardes.png",
+  },
+  {
+    word: "Buenos días",
+    description:
+      "La mano en '5' toca el mentón y se mueve hacia la palma de la mano contraria; después los brazos se cruzan y finalmente las manos se abren.",
+    page: 0,
+    image: "/lsc-featured/buenos-dias.png",
+  },
+  {
+    word: "Cómo está",
+    description:
+      "Manos en '5', con palmas hacia atrás y puntas de los dedos hacia abajo, giran hasta quedar con las palmas hacia arriba.",
+    page: 0,
+    image: "/lsc-featured/como-esta.png",
+  },
+  {
+    word: "Cuándo",
+    description:
+      "Mano en '5' con los dedos juntos golpea suavemente la mejilla varias veces con la yema de los dedos.",
+    page: 0,
+    image: "/lsc-featured/cuando.png",
+  },
+  {
+    word: "De nada",
+    description:
+      "La mano en '5' con la palma sobre el pecho se mueve hacia adelante hasta quedar con la palma hacia arriba.",
+    page: 0,
+    image: "/lsc-featured/de-nada.png",
+  },
+  {
+    word: "Dónde",
+    description:
+      "Ambas manos en '5' con las palmas hacia arriba realizan movimientos cortos simultáneamente de adentro hacia afuera.",
+    page: 0,
+    image: "/lsc-featured/donde.png",
+  },
+  {
+    word: "Qué",
+    description:
+      "La mano en '1' desliza la punta del índice sobre la palma de la mano abierta en '5', desde el borde interno hacia el externo.",
+    page: 0,
+    image: "/lsc-featured/que.png",
+  },
+  {
+    word: "Quién",
+    description:
+      "Mano en 'B' con el borde externo hacia adelante golpea varias veces el mentón con el borde interno.",
+    page: 0,
+    image: "/lsc-featured/quien.png",
   },
 ];
 
