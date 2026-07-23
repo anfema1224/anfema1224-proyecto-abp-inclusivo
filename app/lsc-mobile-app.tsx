@@ -96,7 +96,7 @@ const letters = Array.from(
 export function LscMobileApp() {
   const [query, setQuery] = useState("");
   const [letter, setLetter] = useState("Todos");
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [activeEntry, setActiveEntry] = useState<LscEntry | null>(null);
 
   const filteredEntries = useMemo(() => {
     const normalizedQuery = clean(query.trim());
@@ -111,15 +111,10 @@ export function LscMobileApp() {
     });
   }, [letter, query]);
 
-  const activeEntry = filteredEntries[activeIndex] ?? filteredEntries[0] ?? entries[0];
-
   function selectLetter(nextLetter: string) {
     setLetter(nextLetter);
-    setActiveIndex(0);
-  }
-
-  function selectEntry(index: number) {
-    setActiveIndex(index);
+    setQuery("");
+    setActiveEntry(null);
   }
 
   return (
@@ -152,7 +147,8 @@ export function LscMobileApp() {
               value={query}
               onChange={(event) => {
                 setQuery(event.target.value);
-                setActiveIndex(0);
+                setLetter("Todos");
+                setActiveEntry(null);
               }}
               placeholder="Hola, agua, ayuda..."
             />
@@ -170,40 +166,62 @@ export function LscMobileApp() {
             ))}
           </div>
 
-          <article className="sign-card">
-            <header>
-              <h3>{activeEntry.word.toUpperCase()}</h3>
-              <p>Lengua de Señas Colombiana</p>
-              <span />
-            </header>
-            <div className="sign-photo-wrap">
-              <img
-                src={activeEntry.image}
-                alt={`Referencia visual de la seña ${activeEntry.word}`}
-              />
-            </div>
-            <div className="sign-description">
-              <span aria-hidden="true">LSC</span>
-              <p>{activeEntry.description || "Descripción disponible en la fuente original."}</p>
-            </div>
-          </article>
+          {activeEntry ? (
+            <article className="sign-card">
+              <header>
+                <h3>{activeEntry.word.toUpperCase()}</h3>
+                <p>Lengua de Señas Colombiana</p>
+                <span />
+              </header>
+              <div className="sign-photo-wrap">
+                <img
+                  src={activeEntry.image}
+                  alt={`Referencia visual de la seña ${activeEntry.word}`}
+                />
+              </div>
+              <div className="sign-description">
+                <span aria-hidden="true">LSC</span>
+                <p>
+                  {activeEntry.description ||
+                    "Descripción disponible en la fuente original."}
+                </p>
+              </div>
+            </article>
+          ) : null}
 
-          <div className="entry-list" aria-label="Entradas encontradas">
-            {filteredEntries.slice(0, 36).map((entry, index) => (
-              <button
-                className={entry === activeEntry ? "selected" : ""}
-                key={`${entry.word}-${entry.page}`}
-                type="button"
-                onClick={() => selectEntry(index)}
-              >
-                <img src={entry.image} alt="" />
-                <span>
-                  <strong>{entry.word}</strong>
-                  <small>{entry.page ? `Página ${entry.page}` : "Imagen destacada"}</small>
-                </span>
-              </button>
-            ))}
+          <div className="entry-panel">
+            <div className="entry-panel-heading">
+              <strong>
+                {letter === "Todos" ? "Todas las palabras" : `Letra ${letter}`}
+              </strong>
+              <span>{filteredEntries.length} resultados</span>
+            </div>
+            <div className="entry-list" aria-label="Entradas encontradas">
+              {filteredEntries.slice(0, 60).map((entry) => (
+                <button
+                  className={entry === activeEntry ? "selected" : ""}
+                  key={`${entry.word}-${entry.page}-${entry.image}`}
+                  type="button"
+                  onClick={() => setActiveEntry(entry)}
+                >
+                  <span>
+                    <strong>{entry.word}</strong>
+                    <small>{entry.page ? `Página ${entry.page}` : "Imagen destacada"}</small>
+                  </span>
+                </button>
+              ))}
+              {filteredEntries.length === 0 ? (
+                <p className="empty-results">No hay palabras con ese filtro.</p>
+              ) : null}
+            </div>
           </div>
+
+          {!activeEntry ? (
+            <div className="sign-placeholder">
+              <strong>Selecciona una palabra</strong>
+              <p>Elige una letra y toca una palabra para ver su imagen.</p>
+            </div>
+          ) : null}
         </div>
       </div>
     </div>

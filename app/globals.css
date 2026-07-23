@@ -395,6 +395,8 @@ h3 {
 .mobile-toolbar,
 .letter-strip,
 .entry-list,
+.entry-panel,
+.sign-placeholder,
 .sign-card {
   background: white;
 }
@@ -458,6 +460,25 @@ h3 {
 .sign-card {
   padding: 20px 18px 16px;
   border-top: 1px solid var(--line);
+}
+
+.sign-placeholder {
+  padding: 26px 18px;
+  border-top: 1px solid var(--line);
+  text-align: center;
+}
+
+.sign-placeholder strong {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--ink);
+  font-size: 1.2rem;
+}
+
+.sign-placeholder p {
+  margin-bottom: 0;
+  color: var(--muted);
+  line-height: 1.55;
 }
 
 .sign-card header {
@@ -541,24 +562,42 @@ h3 {
   line-height: 1.55;
 }
 
+.entry-panel {
+  border-top: 1px solid var(--line);
+}
+
+.entry-panel-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 16px 10px;
+}
+
+.entry-panel-heading strong {
+  color: var(--ink);
+}
+
+.entry-panel-heading span {
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
 .entry-list {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 8px;
-  max-height: 220px;
+  max-height: 230px;
   overflow: auto;
-  padding: 0 16px 18px;
-  border-radius: 0 0 22px 22px;
+  padding: 0 16px 16px;
 }
 
 .entry-list button {
-  display: grid;
-  grid-template-columns: 46px 1fr;
-  gap: 8px;
-  align-items: center;
+  display: block;
   min-width: 0;
-  padding: 8px;
-  text-align: left;
+  padding: 11px 10px;
+  text-align: center;
   background: #f8faf9;
   border: 1px solid var(--line);
   border-radius: 12px;
@@ -567,15 +606,6 @@ h3 {
 .entry-list button.selected {
   border-color: var(--teal);
   box-shadow: inset 0 0 0 1px var(--teal);
-}
-
-.entry-list img {
-  width: 46px;
-  height: 46px;
-  object-fit: cover;
-  background: white;
-  border-radius: 9px;
-  filter: grayscale(1);
 }
 
 .entry-list span {
@@ -598,6 +628,14 @@ h3 {
 .entry-list small {
   color: var(--muted);
   font-size: 0.76rem;
+}
+
+.empty-results {
+  grid-column: 1 / -1;
+  margin: 0;
+  padding: 18px;
+  color: var(--muted);
+  text-align: center;
 }
 
 .section,
@@ -1084,6 +1122,6 @@ h3 {
   }
 
   .entry-list {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
