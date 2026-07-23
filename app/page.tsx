@@ -147,32 +147,11 @@ export default function Home() {
                 Descargar documento
               </a>
             </div>
-          </div>
-          <div className="cover-visual" aria-label="Portada visual del proyecto">
-            <div className="sign-stack">
-              <img
-                className="sign-main"
-                src="/sign-lengua.png"
-                alt="Persona realizando una seña de lengua de señas colombiana"
-              />
-              <img
-                className="sign-small sign-small-a"
-                src="/sign-oir.png"
-                alt="Persona realizando una seña relacionada con oír"
-              />
-              <img
-                className="sign-small sign-small-b"
-                src="/sign-tener.png"
-                alt="Persona realizando una seña en lengua de señas"
-              />
-            </div>
-            <div className="cover-note">
-              <span>Portada para evidencia digital</span>
-              <strong>ABP + TIC + DUA</strong>
-              <p>
-                Imágenes de apoyo tomadas del Diccionario básico de la lengua
-                de señas colombiana.
-              </p>
+            <div className="hero-summary" aria-label="Enfoques del proyecto">
+              <span>ABP</span>
+              <span>TIC</span>
+              <span>DUA</span>
+              <span>Accesibilidad comunicativa</span>
             </div>
           </div>
         </div>
@@ -204,6 +183,16 @@ export default function Home() {
             </article>
           ))}
         </div>
+        <figure className="wide-photo">
+          <img
+            src="/ambiente-aula.png"
+            alt="Aula técnica inclusiva con estudiantes colaborando en prototipos accesibles"
+          />
+          <figcaption>
+            Ambiente de trabajo colaborativo para identificar barreras,
+            comunicar ideas y construir soluciones tecnológicas inclusivas.
+          </figcaption>
+        </figure>
       </section>
 
       <section className="section" id="proyecto">
@@ -261,6 +250,21 @@ export default function Home() {
               <p>{phase.text}</p>
             </article>
           ))}
+        </div>
+        <div className="process-visual">
+          <img
+            src="/ambiente-prototipo.png"
+            alt="Estudiantes desarrollando un prototipo con componentes electrónicos y apoyos visuales"
+          />
+          <div>
+            <p className="eyebrow">Prototipado</p>
+            <h3>De la idea al dispositivo accesible</h3>
+            <p>
+              La escena refuerza el enfoque práctico del ABP: observar,
+              conectar, probar y mejorar con evidencias visibles para todo el
+              equipo.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -343,6 +347,21 @@ export default function Home() {
               <div className="mini-guide">{artifact.mini}</div>
             </article>
           ))}
+        </div>
+        <div className="showcase-strip">
+          <img
+            src="/ambiente-socializacion.png"
+            alt="Equipo de estudiantes socializando un prototipo tecnológico inclusivo"
+          />
+          <div>
+            <p className="eyebrow">Socialización</p>
+            <h3>El prototipo se valida comunicándolo</h3>
+            <p>
+              La presentación final permite explicar la necesidad atendida,
+              mostrar el funcionamiento y recoger nuevas mejoras desde la
+              participación de la comunidad educativa.
+            </p>
+          </div>
         </div>
       </section>
 

@@ -49,11 +49,13 @@ main {
 }
 
 .hero {
+  position: relative;
+  isolation: isolate;
   min-height: 92vh;
   padding: 24px clamp(18px, 4vw, 64px) 56px;
   background:
-    linear-gradient(120deg, rgba(15, 118, 110, 0.08), transparent 44%),
-    linear-gradient(180deg, #ffffff 0%, #f7f9f6 100%);
+    linear-gradient(90deg, rgba(247, 249, 246, 0.98) 0%, rgba(247, 249, 246, 0.94) 30%, rgba(247, 249, 246, 0.55) 54%, rgba(247, 249, 246, 0.06) 100%),
+    url("/ambiente-portada.png") center / cover no-repeat;
   border-bottom: 1px solid var(--line);
 }
 
@@ -114,11 +116,11 @@ main {
 
 .hero-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(340px, 0.72fr);
+  grid-template-columns: minmax(0, 790px);
   align-items: center;
   gap: clamp(28px, 6vw, 72px);
   width: min(1180px, 100%);
-  margin: 70px auto 0;
+  margin: 88px auto 0;
 }
 
 .hero-copy {
@@ -173,6 +175,23 @@ h3 {
   flex-wrap: wrap;
   gap: 12px;
   margin-top: 34px;
+}
+
+.hero-summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 24px;
+}
+
+.hero-summary span {
+  padding: 9px 11px;
+  color: #17433e;
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(15, 118, 110, 0.18);
+  border-radius: 999px;
+  font-size: 0.92rem;
+  font-weight: 800;
 }
 
 .primary-button,
@@ -355,6 +374,29 @@ h3 {
   margin-top: 18px;
 }
 
+.wide-photo,
+.process-visual,
+.showcase-strip {
+  overflow: hidden;
+  margin-top: 28px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: 0 24px 60px rgba(23, 33, 29, 0.1);
+}
+
+.wide-photo img {
+  width: 100%;
+  aspect-ratio: 16 / 7;
+  object-fit: cover;
+}
+
+.wide-photo figcaption {
+  padding: 16px 18px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
 .feature-grid article,
 .phase,
 .check-item,
@@ -414,6 +456,32 @@ h3 {
   color: var(--amber);
   font-family: var(--font-geist-mono), monospace;
   font-weight: 900;
+}
+
+.process-visual,
+.showcase-strip {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+}
+
+.process-visual img,
+.showcase-strip img {
+  width: 100%;
+  height: 100%;
+  min-height: 340px;
+  object-fit: cover;
+}
+
+.process-visual > div,
+.showcase-strip > div {
+  padding: clamp(24px, 4vw, 42px);
+}
+
+.process-visual p:not(.eyebrow),
+.showcase-strip p:not(.eyebrow) {
+  color: var(--muted);
+  line-height: 1.7;
 }
 
 .split,
@@ -675,12 +743,16 @@ h3 {
 
   .hero-grid,
   .split,
-  .evidence {
+  .evidence,
+  .process-visual,
+  .showcase-strip {
     grid-template-columns: 1fr;
   }
 
-  .cover-visual {
-    min-height: 500px;
+  .hero {
+    background:
+      linear-gradient(180deg, rgba(247, 249, 246, 0.97) 0%, rgba(247, 249, 246, 0.9) 48%, rgba(247, 249, 246, 0.22) 100%),
+      url("/ambiente-portada.png") 58% center / cover no-repeat;
   }
 
   .feature-grid,
@@ -723,6 +795,10 @@ h3 {
 
   .sign-gallery {
     grid-template-columns: 1fr;
+  }
+
+  .wide-photo img {
+    aspect-ratio: 4 / 3;
   }
 
   .primary-button,

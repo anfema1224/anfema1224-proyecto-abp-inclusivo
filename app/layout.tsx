@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     title: "Proyecto ABP Inclusivo",
     description:
       "Metodología, cronograma, evaluación y evidencias digitales del proyecto de innovación.",
-    images: ["/cronograma.png"],
+    images: ["/ambiente-portada.png"],
   },
   icons: {
     icon: "/favicon.svg",
