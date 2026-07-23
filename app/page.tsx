@@ -62,29 +62,6 @@ const challengeCards = [
   },
 ];
 
-const supportArtifacts = [
-  {
-    title: "Infografía accesible",
-    text: "Barreras comunicativas en ambientes técnicos.",
-    mini: "Canal sonoro exclusivo -> barrera | Señal visual equivalente -> ajuste accesible | Texto claro + icono + luz -> comunicación multimodal",
-  },
-  {
-    title: "Ficha de usuario",
-    text: "Necesidad, contexto y requisitos de accesibilidad.",
-    mini: "Contexto | Barrera observada | Preferencia comunicativa | Requisitos | Criterios de éxito",
-  },
-  {
-    title: "Bitácora de diseño",
-    text: "Registro breve de decisiones, pruebas y mejoras.",
-    mini: "Fecha | Decisión | Evidencia | Problema encontrado | Cambio realizado | Próximo paso",
-  },
-  {
-    title: "Tablero de seguimiento",
-    text: "Organiza el avance del equipo durante el ABP.",
-    mini: "Por investigar -> En diseño -> En construcción -> En prueba -> Mejorado -> Listo para socializar",
-  },
-];
-
 const evaluationRows = [
   ["Pertinencia de la solución", "20 %", "Mapa de barreras y justificación"],
   ["Funcionamiento y seguridad", "25 %", "Lista de comprobación y demostración"],
@@ -153,8 +130,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      <LscMobileApp />
 
       <section className="section" id="reto">
         <div className="section-heading">
@@ -331,37 +306,14 @@ export default function Home() {
       <section className="section" id="artefactos">
         <div className="section-heading">
           <p className="eyebrow">Artefactos digitales</p>
-          <h2>Materiales de apoyo para el aula</h2>
+          <h2>Diccionario móvil de Lengua de Señas Colombiana</h2>
           <p>
-            Estos recursos orientan el trabajo de los equipos y convierten la
-            secuencia ABP en una experiencia visible, documentada y evaluable.
+            Este artefacto permite consultar señas por palabra, filtrar por
+            letra y revisar imágenes de referencia para apoyar la comunicación
+            visual en el aula.
           </p>
         </div>
-        <div className="artifact-card-grid">
-          {supportArtifacts.map((artifact, index) => (
-            <article className="artifact-card" key={artifact.title}>
-              <span>{index + 1}</span>
-              <h3>{artifact.title}</h3>
-              <p>{artifact.text}</p>
-              <div className="mini-guide">{artifact.mini}</div>
-            </article>
-          ))}
-        </div>
-        <div className="showcase-strip">
-          <img
-            src="/ambiente-socializacion.png"
-            alt="Equipo de estudiantes socializando un prototipo tecnológico inclusivo"
-          />
-          <div>
-            <p className="eyebrow">Socialización</p>
-            <h3>El prototipo se valida comunicándolo</h3>
-            <p>
-              La presentación final permite explicar la necesidad atendida,
-              mostrar el funcionamiento y recoger nuevas mejoras desde la
-              participación de la comunidad educativa.
-            </p>
-          </div>
-        </div>
+        <LscMobileApp />
       </section>
 
       <section className="band" id="accesibilidad">

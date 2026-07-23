@@ -314,6 +314,22 @@ h3 {
   border-bottom: 1px solid var(--line);
 }
 
+.section > .dictionary-app {
+  padding: 0;
+  background: transparent;
+  border-bottom: 0;
+}
+
+.section > .dictionary-app .dictionary-shell {
+  width: 100%;
+  grid-template-columns: minmax(320px, 520px);
+  justify-content: center;
+}
+
+.section > .dictionary-app .dictionary-copy {
+  display: none;
+}
+
 .dictionary-shell {
   display: grid;
   grid-template-columns: minmax(0, 0.85fr) minmax(340px, 520px);

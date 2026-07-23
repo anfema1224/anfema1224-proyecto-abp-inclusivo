@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { lscEntries } from "./lsc-dictionary";
+import { lscEntries, type LscEntry } from "./lsc-dictionary";
 
 const clean = (value: string) =>
   value
@@ -9,8 +9,88 @@ const clean = (value: string) =>
     .replace(/[\u0300-\u036f]/g, "")
     .toLowerCase();
 
+const featuredEntries: LscEntry[] = [
+  {
+    word: "Hola",
+    description:
+      "Mano en '5' con la palma hacia adentro. Dirige la mano hacia el interlocutor y eleva ligeramente las cejas.",
+    page: 0,
+    image: "/lsc-featured/hola.png",
+  },
+  {
+    word: "Gracias",
+    description:
+      "La mano en '5' toca el mentón y se dirige hacia la palma de la otra mano. Inclina ligeramente la cabeza.",
+    page: 0,
+    image: "/lsc-featured/gracias.png",
+  },
+  {
+    word: "Por favor",
+    description:
+      "La mano cerrada, con la palma hacia atrás, describe círculos sobre el pecho.",
+    page: 0,
+    image: "/lsc-featured/por-favor.png",
+  },
+  {
+    word: "Perdón",
+    description:
+      "La mano en '5' se desliza hacia adelante sobre la palma de la otra mano. Repite el movimiento.",
+    page: 0,
+    image: "/lsc-featured/perdon.png",
+  },
+  {
+    word: "Sí",
+    description:
+      "La mano cerrada, con la palma hacia adelante, se flexiona hacia abajo varias veces.",
+    page: 0,
+    image: "/lsc-featured/si.png",
+  },
+  {
+    word: "No",
+    description: "La mano en '1' se mueve repetidamente de un lado a otro.",
+    page: 0,
+    image: "/lsc-featured/no.png",
+  },
+  {
+    word: "Ayuda",
+    description:
+      "La mano cerrada se coloca sobre la palma de la otra mano y luego ambas se mueven hacia adelante.",
+    page: 0,
+    image: "/lsc-featured/ayuda.png",
+  },
+  {
+    word: "Agua",
+    description:
+      "La mano en 'A', con la palma hacia adentro, toca el mentón con la punta del pulgar.",
+    page: 0,
+    image: "/lsc-featured/agua.png",
+  },
+  {
+    word: "Comer",
+    description:
+      "La mano en 'Q', con la palma hacia atrás, realiza movimientos cortos cerca de la boca.",
+    page: 0,
+    image: "/lsc-featured/comer.png",
+  },
+  {
+    word: "Baño",
+    description:
+      "La mano en 'B', frente a la cara, gira hacia los lados varias veces.",
+    page: 0,
+    image: "/lsc-featured/bano.png",
+  },
+];
+
+const entries = [
+  ...featuredEntries,
+  ...lscEntries.filter(
+    (entry) =>
+      !featuredEntries.some((featured) => clean(featured.word) === clean(entry.word)),
+  ),
+];
+
 const letters = Array.from(
-  new Set(lscEntries.map((entry) => clean(entry.word)[0]?.toUpperCase()).filter(Boolean)),
+  new Set(entries.map((entry) => clean(entry.word)[0]?.toUpperCase()).filter(Boolean)),
 ).sort();
 
 export function LscMobileApp() {
@@ -20,7 +100,7 @@ export function LscMobileApp() {
 
   const filteredEntries = useMemo(() => {
     const normalizedQuery = clean(query.trim());
-    return lscEntries.filter((entry) => {
+    return entries.filter((entry) => {
       const matchesLetter =
         letter === "Todos" || clean(entry.word).startsWith(letter.toLowerCase());
       const matchesQuery =
@@ -31,7 +111,7 @@ export function LscMobileApp() {
     });
   }, [letter, query]);
 
-  const activeEntry = filteredEntries[activeIndex] ?? filteredEntries[0] ?? lscEntries[0];
+  const activeEntry = filteredEntries[activeIndex] ?? filteredEntries[0] ?? entries[0];
 
   function selectLetter(nextLetter: string) {
     setLetter(nextLetter);
@@ -43,7 +123,7 @@ export function LscMobileApp() {
   }
 
   return (
-    <section className="dictionary-app" id="diccionario">
+    <div className="dictionary-app" id="diccionario">
       <div className="dictionary-shell">
         <div className="dictionary-copy">
           <p className="eyebrow">App móvil</p>
@@ -54,7 +134,7 @@ export function LscMobileApp() {
             base.
           </p>
           <div className="dictionary-stats" aria-label="Resumen del diccionario">
-            <span>{lscEntries.length} entradas</span>
+            <span>{entries.length} entradas</span>
             <span>{letters.length} letras</span>
             <span>LSC</span>
           </div>
@@ -119,13 +199,13 @@ export function LscMobileApp() {
                 <img src={entry.image} alt="" />
                 <span>
                   <strong>{entry.word}</strong>
-                  <small>Página {entry.page}</small>
+                  <small>{entry.page ? `Página ${entry.page}` : "Imagen destacada"}</small>
                 </span>
               </button>
             ))}
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 }
