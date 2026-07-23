@@ -149,6 +149,13 @@ const featuredEntries: LscEntry[] = [
     image: "/lsc-featured/casa.png",
   },
   {
+    word: "Celular",
+    description:
+      "La mano con los dedos índice y pulgar unidos toca el borde interno del índice de la otra mano; luego realiza un movimiento corto hacia arriba y termina al lado de la oreja.",
+    page: 0,
+    image: "/lsc-featured/celular.png",
+  },
+  {
     word: "Cómo está",
     description:
       "Manos en '5', con palmas hacia atrás y puntas de los dedos hacia abajo, giran hasta quedar con las palmas hacia arriba.",
@@ -259,6 +266,13 @@ const featuredEntries: LscEntry[] = [
       "Las manos cerradas con las palmas hacia adelante y a la altura de los hombros se flexionan, al tiempo que los brazos bajan enérgicamente.",
     page: 0,
     image: "/lsc-featured/poder.png",
+  },
+  {
+    word: "Policía",
+    description:
+      "La mano en 'B' apoya varias veces el borde interno del índice sobre el ángulo externo de la ceja.",
+    page: 0,
+    image: "/lsc-featured/policia.png",
   },
   {
     word: "Por qué",
