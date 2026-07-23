@@ -116,6 +116,13 @@ const resourceLinks = [
   },
 ];
 
+const heroStats = [
+  ["16", "sesiones"],
+  ["42", "señas destacadas"],
+  ["6", "fases ABP"],
+  ["DUA", "accesibilidad"],
+];
+
 const signImages = [
   ["/sign-lengua.png", "Referencia visual de lengua de señas colombiana"],
   ["/sign-oir.png", "Referencia visual para la seña de oír"],
@@ -150,10 +157,18 @@ export default function Home() {
               educativa de estudiantes con discapacidad auditiva
             </h1>
             <p className="lead">
-              Portal digital para alojar la propuesta ABP, sus fases,
-              instrumentos de evaluación, evidencias y recursos de apoyo para
-              estudiantes de media técnica articulada con el SENA.
+              Portal digital que reúne la ruta ABP, el cronograma, la evaluación
+              y un diccionario móvil de Lengua de Señas Colombiana para apoyar
+              experiencias accesibles en media técnica articulada con el SENA.
             </p>
+            <div className="hero-stats" aria-label="Resumen del proyecto">
+              {heroStats.map(([value, label]) => (
+                <div key={`${value}-${label}`}>
+                  <strong>{value}</strong>
+                  <span>{label}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -339,6 +354,11 @@ export default function Home() {
             letra y revisar imágenes de referencia para apoyar la comunicación
             visual en el aula.
           </p>
+          <div className="dictionary-quick-facts" aria-label="Resumen del diccionario móvil">
+            <span>42 señas ilustradas a color</span>
+            <span>Búsqueda por palabra</span>
+            <span>Filtro por letra</span>
+          </div>
         </div>
         <LscMobileApp />
       </section>
