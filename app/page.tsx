@@ -147,12 +147,6 @@ export default function Home() {
                 Descargar documento
               </a>
             </div>
-            <div className="hero-summary" aria-label="Enfoques del proyecto">
-              <span>ABP</span>
-              <span>TIC</span>
-              <span>DUA</span>
-              <span>Accesibilidad comunicativa</span>
-            </div>
           </div>
         </div>
       </section>
@@ -415,16 +409,6 @@ export default function Home() {
             Descargar TFM ajustado
           </a>
         </div>
-      </section>
-
-      <section className="cta">
-        <p className="eyebrow">Enlace para el documento</p>
-        <h2>Portal del proyecto ABP inclusivo</h2>
-        <p>
-          Usa esta página como evidencia digital del proyecto de innovación:
-          contiene el reto, la metodología, el cronograma, la evaluación y los
-          recursos que se presentarán a estudiantes.
-        </p>
       </section>
     </main>
   );
