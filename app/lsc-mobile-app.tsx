@@ -9,6 +9,9 @@ const clean = (value: string) =>
     .replace(/[\u0300-\u036f]/g, "")
     .toLowerCase();
 
+const sortByWord = (first: LscEntry, second: LscEntry) =>
+  clean(first.word).localeCompare(clean(second.word), "es");
+
 const featuredEntries: LscEntry[] = [
   {
     word: "Hola",
@@ -87,7 +90,7 @@ const entries = [
     (entry) =>
       !featuredEntries.some((featured) => clean(featured.word) === clean(entry.word)),
   ),
-];
+].sort(sortByWord);
 
 const letters = Array.from(
   new Set(entries.map((entry) => clean(entry.word)[0]?.toUpperCase()).filter(Boolean)),
@@ -102,15 +105,17 @@ export function LscMobileApp() {
 
   const filteredEntries = useMemo(() => {
     const normalizedQuery = clean(query.trim());
-    return entries.filter((entry) => {
-      const matchesLetter =
-        letter === "Todos" || clean(entry.word).startsWith(letter.toLowerCase());
-      const matchesQuery =
-        !normalizedQuery ||
-        clean(entry.word).includes(normalizedQuery) ||
-        clean(entry.description).includes(normalizedQuery);
-      return matchesLetter && matchesQuery;
-    });
+    return entries
+      .filter((entry) => {
+        const matchesLetter =
+          letter === "Todos" || clean(entry.word).startsWith(letter.toLowerCase());
+        const matchesQuery =
+          !normalizedQuery ||
+          clean(entry.word).includes(normalizedQuery) ||
+          clean(entry.description).includes(normalizedQuery);
+        return matchesLetter && matchesQuery;
+      })
+      .sort(sortByWord);
   }, [letter, query]);
 
   function selectLetter(nextLetter: string) {
