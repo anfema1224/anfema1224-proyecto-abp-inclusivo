@@ -83,6 +83,20 @@ const featuredEntries: LscEntry[] = [
     image: "/lsc-featured/comer.png",
   },
   {
+    word: "Comprar",
+    description:
+      "La mano en 'V' con el borde externo hacia adelante apoya la punta del índice sobre el mentón y luego gira de abajo hacia arriba varias veces.",
+    page: 0,
+    image: "/lsc-featured/comprar.png",
+  },
+  {
+    word: "Cuánto",
+    description:
+      "La mano cerrada o en 'Q' con la palma hacia arriba se abre. Puede realizarse con las dos manos.",
+    page: 0,
+    image: "/lsc-featured/cuanto.png",
+  },
+  {
     word: "Baño",
     description:
       "La mano en 'B', frente a la cara, gira hacia los lados varias veces.",
@@ -139,6 +153,55 @@ const featuredEntries: LscEntry[] = [
     image: "/lsc-featured/donde.png",
   },
   {
+    word: "Entender",
+    description:
+      "La mano cerrada con la palma hacia atrás se ubica al lado de la sien. Luego el índice se desliza sobre la yema del pulgar y la mano avanza en configuración '1'.",
+    page: 0,
+    image: "/lsc-featured/entender.png",
+  },
+  {
+    word: "Hablar",
+    description:
+      "La mano ligeramente cóncava, con la palma hacia adentro y a la altura de la boca, une y separa repetidamente la yema del pulgar con la de los demás dedos.",
+    page: 0,
+    image: "/lsc-featured/hablar.png",
+  },
+  {
+    word: "Hoy",
+    description:
+      "La mano en '1' con la palma hacia abajo realiza movimientos cortos de arriba hacia abajo.",
+    page: 0,
+    image: "/lsc-featured/hoy.png",
+  },
+  {
+    word: "Necesitar",
+    description:
+      "La mano en 'U' con la palma hacia atrás toca con las yemas del índice y del meñique la parte inferior de los ojos, luego se mueve hacia adelante.",
+    page: 0,
+    image: "/lsc-featured/necesitar.png",
+  },
+  {
+    word: "Poder",
+    description:
+      "Las manos cerradas con las palmas hacia adelante y a la altura de los hombros se flexionan, al tiempo que los brazos bajan enérgicamente.",
+    page: 0,
+    image: "/lsc-featured/poder.png",
+  },
+  {
+    word: "Por qué",
+    description:
+      "La mano en '5' toca con el dedo medio la frente y luego se mueve hacia adelante. Se frunce el ceño y se elevan los hombros.",
+    page: 0,
+    image: "/lsc-featured/por-que.png",
+  },
+  {
+    word: "Querer",
+    description:
+      "Las manos en '5', con las palmas hacia atrás y a la altura de los hombros, bajan al tiempo que los dedos se flexionan ligeramente.",
+    page: 0,
+    image: "/lsc-featured/querer.png",
+  },
+  {
     word: "Qué",
     description:
       "La mano en '1' desliza la punta del índice sobre la palma de la mano abierta en '5', desde el borde interno hacia el externo.",
@@ -151,6 +214,13 @@ const featuredEntries: LscEntry[] = [
       "Mano en 'B' con el borde externo hacia adelante golpea varias veces el mentón con el borde interno.",
     page: 0,
     image: "/lsc-featured/quien.png",
+  },
+  {
+    word: "Saber",
+    description:
+      "La mano en '5' con los dedos juntos, excepto el pulgar, y la palma hacia atrás golpea suavemente la frente con los dedos.",
+    page: 0,
+    image: "/lsc-featured/saber.png",
   },
 ];
 
