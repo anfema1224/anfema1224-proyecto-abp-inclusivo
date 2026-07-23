@@ -330,7 +330,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section" id="artefactos">
+      <section className="section dictionary-section" id="artefactos">
         <div className="section-heading">
           <p className="eyebrow">Artefactos digitales</p>
           <h2>Diccionario móvil de Lengua de Señas Colombiana</h2>

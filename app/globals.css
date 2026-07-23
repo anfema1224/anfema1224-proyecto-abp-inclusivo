@@ -680,6 +680,21 @@ h3 {
   line-height: 1.72;
 }
 
+.dictionary-section {
+  background:
+    linear-gradient(90deg, rgba(247, 249, 246, 0.96) 0%, rgba(247, 249, 246, 0.88) 46%, rgba(247, 249, 246, 0.7) 100%),
+    url("/diccionario-fondo.png") center / cover no-repeat;
+  border-block: 1px solid var(--line);
+}
+
+.dictionary-section .section-heading {
+  padding: 24px;
+  background: rgba(255, 255, 255, 0.76);
+  border: 1px solid rgba(223, 232, 223, 0.9);
+  border-radius: 8px;
+  backdrop-filter: blur(8px);
+}
+
 .feature-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
