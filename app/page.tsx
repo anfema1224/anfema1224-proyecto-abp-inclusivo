@@ -330,12 +330,12 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section dictionary-section" id="artefactos">
+      <section className="section dictionary-section" id="prototipos">
         <div className="section-heading">
-          <p className="eyebrow">Artefactos digitales</p>
+          <p className="eyebrow">Prototipos digitales</p>
           <h2>Diccionario móvil de Lengua de Señas Colombiana</h2>
           <p>
-            Este artefacto permite consultar señas por palabra, filtrar por
+            Este prototipo permite consultar señas por palabra, filtrar por
             letra y revisar imágenes de referencia para apoyar la comunicación
             visual en el aula.
           </p>
@@ -368,8 +368,8 @@ export default function Home() {
             del proyecto. También funciona como enlace principal para incluir
             en el TFM como evidencia digital de la propuesta de innovación.
           </p>
-          <a className="secondary-button inline-action" href="#artefactos">
-            Ver artefactos de apoyo
+          <a className="secondary-button inline-action" href="#prototipos">
+            Ver prototipos de apoyo
           </a>
         </div>
         <div className="resource-card text-resource">
