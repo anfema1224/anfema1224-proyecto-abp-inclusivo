@@ -12,6 +12,9 @@ const clean = (value: string) =>
 const sortByWord = (first: LscEntry, second: LscEntry) =>
   clean(first.word).localeCompare(clean(second.word), "es");
 
+const sameDictionaryWord = (first: string, second: string) =>
+  first.localeCompare(second, "es", { sensitivity: "accent" }) === 0;
+
 const featuredEntries: LscEntry[] = [
   {
     word: "Adiós",
@@ -76,6 +79,20 @@ const featuredEntries: LscEntry[] = [
     image: "/lsc-featured/agua.png",
   },
   {
+    word: "Aquí",
+    description:
+      "La mano en '1' con la punta del índice hacia abajo realiza movimientos cortos y repetidos hacia abajo.",
+    page: 0,
+    image: "/lsc-featured/aqui.png",
+  },
+  {
+    word: "Ayer",
+    description:
+      "El brazo en posición vertical, con la mano cerrada y el pulgar extendido, se mueve hacia atrás hasta quedar cerca de la mejilla.",
+    page: 0,
+    image: "/lsc-featured/ayer.png",
+  },
+  {
     word: "Comer",
     description:
       "La mano en 'Q', con la palma hacia atrás, realiza movimientos cortos cerca de la boca.",
@@ -125,6 +142,13 @@ const featuredEntries: LscEntry[] = [
     image: "/lsc-featured/buenos-dias.png",
   },
   {
+    word: "Casa",
+    description:
+      "Las manos en '5' con los dedos juntos, excepto el pulgar, se unen por las yemas y pueden separarse rápidamente.",
+    page: 0,
+    image: "/lsc-featured/casa.png",
+  },
+  {
     word: "Cómo está",
     description:
       "Manos en '5', con palmas hacia atrás y puntas de los dedos hacia abajo, giran hasta quedar con las palmas hacia arriba.",
@@ -160,6 +184,20 @@ const featuredEntries: LscEntry[] = [
     image: "/lsc-featured/entender.png",
   },
   {
+    word: "Enfermo",
+    description:
+      "La mano en '5' con los dedos juntos, excepto el pulgar, toca con el dorso de los dedos la mejilla o la frente.",
+    page: 0,
+    image: "/lsc-featured/enfermo.png",
+  },
+  {
+    word: "Familia",
+    description:
+      "Las manos con índices y pulgares unidos se tocan por el dorso de los pulgares; enseguida se separan y giran hacia adelante.",
+    page: 0,
+    image: "/lsc-featured/familia.png",
+  },
+  {
     word: "Hablar",
     description:
       "La mano ligeramente cóncava, con la palma hacia adentro y a la altura de la boca, une y separa repetidamente la yema del pulgar con la de los demás dedos.",
@@ -174,11 +212,46 @@ const featuredEntries: LscEntry[] = [
     image: "/lsc-featured/hoy.png",
   },
   {
+    word: "Hospital",
+    description:
+      "La mano en 'T' toca con el dorso del pulgar la frente y luego se mueve hacia adelante.",
+    page: 0,
+    image: "/lsc-featured/hospital.png",
+  },
+  {
+    word: "Mamá",
+    description:
+      "La mano en '5' con los dedos juntos, excepto el pulgar, apoya varias veces el borde externo sobre la parte superior del pecho.",
+    page: 0,
+    image: "/lsc-featured/mama.png",
+  },
+  {
+    word: "Mañana",
+    description:
+      "La mano cerrada con el pulgar extendido apoya la yema del pulgar sobre la mejilla y luego se desliza hacia adelante y hacia afuera.",
+    page: 0,
+    image: "/lsc-featured/manana.png",
+  },
+  {
+    word: "Médico",
+    description:
+      "La mano presiona con los dedos índice, medio y pulgar la parte superior e inferior de la muñeca de la otra mano.",
+    page: 0,
+    image: "/lsc-featured/medico.png",
+  },
+  {
     word: "Necesitar",
     description:
       "La mano en 'U' con la palma hacia atrás toca con las yemas del índice y del meñique la parte inferior de los ojos, luego se mueve hacia adelante.",
     page: 0,
     image: "/lsc-featured/necesitar.png",
+  },
+  {
+    word: "Papá",
+    description:
+      "La mano en '1' desliza la yema del índice sobre parte de la zona del bigote. Este movimiento puede repetirse.",
+    page: 0,
+    image: "/lsc-featured/papa-familia.png",
   },
   {
     word: "Poder",
@@ -228,7 +301,7 @@ const entries = [
   ...featuredEntries,
   ...lscEntries.filter(
     (entry) =>
-      !featuredEntries.some((featured) => clean(featured.word) === clean(entry.word)),
+      !featuredEntries.some((featured) => sameDictionaryWord(featured.word, entry.word)),
   ),
 ].sort(sortByWord);
 
