@@ -78,6 +78,44 @@ const accessibilityChecks = [
   "El usuario participa en las pruebas y puede proponer mejoras.",
 ];
 
+const resourceLinks = [
+  {
+    title: "INSOR Educativo",
+    description:
+      "Diccionario y repositorio virtual bilingüe de Lengua de Señas Colombiana.",
+    url: "https://educativo.insor.gov.co/",
+    tag: "LSC",
+  },
+  {
+    title: "Vocabulario LSC",
+    description:
+      "Glosario educativo para reconocer y practicar vocabulario en Lengua de Señas Colombiana.",
+    url: "https://educativo.insor.gov.co/repoclasesvivo/vocabulario-lsc/",
+    tag: "Glosario",
+  },
+  {
+    title: "Inclusión educativa",
+    description:
+      "Orientaciones del Ministerio de Educación Nacional sobre atención a población con discapacidad.",
+    url: "https://www.mineducacion.gov.co/1621/article-141881.html",
+    tag: "MEN",
+  },
+  {
+    title: "SENA y discapacidad",
+    description:
+      "Información institucional sobre atención a poblaciones vulnerables y personas con discapacidad.",
+    url: "https://www.sena.edu.co/es-co/trabajo/paginas/default.aspx",
+    tag: "SENA",
+  },
+  {
+    title: "Pautas DUA",
+    description:
+      "Guías CAST para aplicar Diseño Universal para el Aprendizaje en experiencias educativas.",
+    url: "https://udlguidelines.cast.org/",
+    tag: "DUA",
+  },
+];
+
 const signImages = [
   ["/sign-lengua.png", "Referencia visual de lengua de señas colombiana"],
   ["/sign-oir.png", "Referencia visual para la seña de oír"],
@@ -100,6 +138,7 @@ export default function Home() {
             <a href="#evaluacion">Evaluación</a>
             <a href="#accesibilidad">Accesibilidad</a>
             <a href="#evidencias">Evidencias</a>
+            <a href="#recursos">Recursos</a>
           </div>
         </nav>
 
@@ -115,18 +154,6 @@ export default function Home() {
               instrumentos de evaluación, evidencias y recursos de apoyo para
               estudiantes de media técnica articulada con el SENA.
             </p>
-            <div className="actions">
-              <a className="primary-button" href="#metodologia">
-                Ver secuencia
-              </a>
-              <a
-                className="secondary-button"
-                href="/Proyecto_ABP_ANDRES_FELIPE_MARIN_ajustado_resaltado.docx"
-                download
-              >
-                Descargar documento
-              </a>
-            </div>
           </div>
         </div>
       </section>
@@ -365,6 +392,33 @@ export default function Home() {
           >
             Descargar TFM ajustado
           </a>
+        </div>
+      </section>
+
+      <section className="band resources-section" id="recursos">
+        <div className="section-heading">
+          <p className="eyebrow">Recursos de interés</p>
+          <h2>Enlaces para ampliar el proyecto</h2>
+          <p>
+            Sitios institucionales y pedagógicos para fortalecer la
+            fundamentación sobre Lengua de Señas Colombiana, inclusión,
+            accesibilidad y Diseño Universal para el Aprendizaje.
+          </p>
+        </div>
+        <div className="resource-link-grid">
+          {resourceLinks.map((resource) => (
+            <a
+              className="resource-link-card"
+              href={resource.url}
+              key={resource.url}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <span>{resource.tag}</span>
+              <h3>{resource.title}</h3>
+              <p>{resource.description}</p>
+            </a>
+          ))}
         </div>
       </section>
     </main>
