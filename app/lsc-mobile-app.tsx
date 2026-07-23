@@ -93,6 +93,8 @@ const letters = Array.from(
   new Set(entries.map((entry) => clean(entry.word)[0]?.toUpperCase()).filter(Boolean)),
 ).sort();
 
+const isFeaturedEntry = (entry: LscEntry) => entry.image.startsWith("/lsc-featured/");
+
 export function LscMobileApp() {
   const [query, setQuery] = useState("");
   const [letter, setLetter] = useState("Todos");
@@ -167,26 +169,35 @@ export function LscMobileApp() {
           </div>
 
           {activeEntry ? (
-            <article className="sign-card">
-              <header>
-                <h3>{activeEntry.word.toUpperCase()}</h3>
-                <p>Lengua de Señas Colombiana</p>
-                <span />
-              </header>
-              <div className="sign-photo-wrap">
+            isFeaturedEntry(activeEntry) ? (
+              <article className="sign-card featured-sign-card">
                 <img
                   src={activeEntry.image}
-                  alt={`Referencia visual de la seña ${activeEntry.word}`}
+                  alt={`Tarjeta visual en color de la seña ${activeEntry.word}`}
                 />
-              </div>
-              <div className="sign-description">
-                <span aria-hidden="true">LSC</span>
-                <p>
-                  {activeEntry.description ||
-                    "Descripción disponible en la fuente original."}
-                </p>
-              </div>
-            </article>
+              </article>
+            ) : (
+              <article className="sign-card rendered-sign-card">
+                <header>
+                  <h3>{activeEntry.word.toUpperCase()}</h3>
+                  <p>Lengua de Señas Colombiana</p>
+                  <span />
+                </header>
+                <div className="sign-photo-wrap">
+                  <img
+                    src={activeEntry.image}
+                    alt={`Referencia visual de la seña ${activeEntry.word}`}
+                  />
+                </div>
+                <div className="sign-description">
+                  <span aria-hidden="true">LSC</span>
+                  <p>
+                    {activeEntry.description ||
+                      "Descripción disponible en la fuente original."}
+                  </p>
+                </div>
+              </article>
+            )
           ) : null}
 
           <div className="entry-panel">
