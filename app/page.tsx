@@ -116,13 +116,6 @@ const resourceLinks = [
   },
 ];
 
-const heroStats = [
-  ["16", "sesiones"],
-  ["42", "señas destacadas"],
-  ["6", "fases ABP"],
-  ["DUA", "accesibilidad"],
-];
-
 const signImages = [
   ["/sign-lengua.png", "Referencia visual de lengua de señas colombiana"],
   ["/sign-oir.png", "Referencia visual para la seña de oír"],
@@ -161,14 +154,6 @@ export default function Home() {
               y un diccionario móvil de Lengua de Señas Colombiana para apoyar
               experiencias accesibles en media técnica articulada con el SENA.
             </p>
-            <div className="hero-stats" aria-label="Resumen del proyecto">
-              {heroStats.map(([value, label]) => (
-                <div key={`${value}-${label}`}>
-                  <strong>{value}</strong>
-                  <span>{label}</span>
-                </div>
-              ))}
-            </div>
           </div>
         </div>
       </section>
