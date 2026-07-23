@@ -139,7 +139,7 @@ export default function Home() {
             El proyecto se diseña para un contexto colombiano de educación
             media técnica articulada con el SENA. Su necesidad surge de
             barreras comunicativas y tecnológicas que pueden limitar la
-            participacion de estudiantes con discapacidad auditiva en aulas,
+            participación de estudiantes con discapacidad auditiva en aulas,
             talleres y laboratorios.
           </p>
         </div>
@@ -148,7 +148,7 @@ export default function Home() {
             <span className="metric">ABP</span>
             <h3>Aprendizaje activo</h3>
             <p>
-              El alumnado investiga una necesidad real, toma decisiónes,
+              El alumnado investiga una necesidad real, toma decisiones,
               construye un producto y comunica sus resultados.
             </p>
           </article>
@@ -165,7 +165,7 @@ export default function Home() {
             <h3>Prototipos inclusivos</h3>
             <p>
               Arduino, sensores, LED, vibradores, interfaces digitales o
-              herramientas web se usan para transformar barreras en soluciónes.
+              herramientas web se usan para transformar barreras en soluciones.
             </p>
           </article>
         </div>
@@ -215,17 +215,17 @@ export default function Home() {
       <section className="band" id="evaluación">
         <div className="section-heading">
           <p className="eyebrow">Evaluación</p>
-          <h2>Aprendizaje, prototipo y validacion</h2>
+          <h2>Aprendizaje, prototipo y validación</h2>
           <p>
             La evaluación combina seguimiento formativo, producto final y juicio
-            experto. El analisis cuantitativo se complementa con una lectura
+            experto. El análisis cuantitativo se complementa con una lectura
             cualitativa mediante matriz DAFO.
           </p>
         </div>
         <div className="evaluation-grid">
           {evaluation.map((item) => (
             <div className="check-item" key={item}>
-              <span aria-hidden="true">âœ“</span>
+              <span aria-hidden="true">{"✓"}</span>
               <p>{item}</p>
             </div>
           ))}
@@ -252,7 +252,7 @@ export default function Home() {
           <h3>Lengua de señas como mediación accesible</h3>
           <p>
             Las imágenes sirven como apoyo para comprender que la accesibilidad
-            no se limita a subtítulos o texto escrito: tambien implica reconocer
+            no se limita a subtítulos o texto escrito: también implica reconocer
             sistemas de comunicación visual y corporal.
           </p>
           <div className="sign-gallery">
@@ -275,8 +275,8 @@ export default function Home() {
         <h2>Portal del proyecto ABP inclusivo</h2>
         <p>
           Usa esta página como evidencia digital del proyecto de innovación:
-          contiene el reto, la metodologia, el cronograma, la evaluación y los
-          recursos que se presentaran al alumnado.
+          contiene el reto, la metodología, el cronograma, la evaluación y los
+          recursos que se presentarán al alumnado.
         </p>
       </section>
     </main>
