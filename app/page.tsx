@@ -128,7 +128,7 @@ export default function Home() {
             <p className="eyebrow">Proyecto de innovación educativa</p>
             <h1>
               Diseño de prototipos tecnológicos para favorecer la inclusión
-              educativa de alumnado con discapacidad auditiva
+              educativa de estudiantes con discapacidad auditiva
             </h1>
             <p className="lead">
               Portal digital para alojar la propuesta ABP, sus fases,
@@ -201,7 +201,7 @@ export default function Home() {
           <h2>Una propuesta técnica con sentido social</h2>
           <p>
             La propuesta articula metodología activa, accesibilidad e
-            innovación tecnológica para que el alumnado aprenda construyendo
+            innovación tecnológica para que los estudiantes aprendan construyendo
             soluciones con impacto en su comunidad educativa.
           </p>
         </div>
@@ -210,8 +210,8 @@ export default function Home() {
             <span className="metric">ABP</span>
             <h3>Aprendizaje activo</h3>
             <p>
-              El alumnado investiga una necesidad real, toma decisiones,
-              construye un producto y comunica sus resultados.
+              Los estudiantes investigan una necesidad real, toman decisiones,
+              construyen un producto y comunican sus resultados.
             </p>
           </article>
           <article>
@@ -384,7 +384,7 @@ export default function Home() {
       <section className="section evidence" id="evidencias">
         <div className="evidence-copy">
           <p className="eyebrow">Evidencias digitales</p>
-          <h2>Recursos para presentar el proyecto al alumnado</h2>
+          <h2>Recursos para presentar el proyecto a estudiantes</h2>
           <p>
             Este espacio aloja la secuencia, rúbricas, fichas y orientaciones
             del proyecto. También funciona como enlace principal para incluir
@@ -423,7 +423,7 @@ export default function Home() {
         <p>
           Usa esta página como evidencia digital del proyecto de innovación:
           contiene el reto, la metodología, el cronograma, la evaluación y los
-          recursos que se presentarán al alumnado.
+          recursos que se presentarán a estudiantes.
         </p>
       </section>
     </main>

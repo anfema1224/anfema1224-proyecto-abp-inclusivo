@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Proyecto ABP Inclusivo",
   description:
-    "Portal del proyecto de innovación sobre prototipos tecnológicos para favorecer la inclusión educativa de alumnado con discapacidad auditiva.",
+    "Portal del proyecto de innovación sobre prototipos tecnológicos para favorecer la inclusión educativa de estudiantes con discapacidad auditiva.",
   openGraph: {
     title: "Proyecto ABP Inclusivo",
     description:
