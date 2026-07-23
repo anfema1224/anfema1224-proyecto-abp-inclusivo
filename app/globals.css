@@ -338,6 +338,23 @@ h3 {
   gap: 16px;
 }
 
+.challenge-notice {
+  width: min(1180px, 100%);
+  margin: 0 auto 18px;
+  padding: 20px 22px;
+  background: #fff6db;
+  border: 1px solid #ead69a;
+  border-left: 7px solid var(--amber);
+  border-radius: 8px;
+  color: #493c18;
+  font-size: clamp(1.05rem, 2vw, 1.22rem);
+  line-height: 1.55;
+}
+
+.challenge-grid {
+  margin-top: 18px;
+}
+
 .feature-grid article,
 .phase,
 .check-item,
@@ -349,6 +366,10 @@ h3 {
 
 .feature-grid article {
   padding: 24px;
+}
+
+.challenge-grid article h3 {
+  color: var(--teal);
 }
 
 .metric {
@@ -436,6 +457,38 @@ h3 {
   gap: 12px;
 }
 
+.evaluation-table-wrap {
+  overflow-x: auto;
+  margin-top: 24px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.evaluation-table {
+  width: 100%;
+  min-width: 680px;
+  border-collapse: collapse;
+}
+
+.evaluation-table th,
+.evaluation-table td {
+  padding: 14px 16px;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--line);
+}
+
+.evaluation-table th {
+  color: #153d49;
+  background: #dff1f4;
+  font-weight: 800;
+}
+
+.evaluation-table tr:last-child td {
+  border-bottom: 0;
+}
+
 .check-item {
   display: flex;
   align-items: center;
@@ -473,6 +526,89 @@ h3 {
   border-radius: 6px;
   color: #304039;
   font-weight: 700;
+}
+
+.artifact-card-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.artifact-card {
+  min-height: 245px;
+  padding: 20px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.artifact-card > span {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  margin-bottom: 14px;
+  color: white;
+  background: var(--teal);
+  border-radius: 999px;
+  font-weight: 900;
+}
+
+.artifact-card h3 {
+  color: var(--teal);
+}
+
+.artifact-card p {
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.mini-guide {
+  margin-top: 12px;
+  padding: 12px;
+  color: #304039;
+  background: #edf5ee;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+.accessibility-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  padding: 0;
+  list-style: none;
+}
+
+.accessibility-list li {
+  position: relative;
+  padding: 16px 16px 16px 48px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.accessibility-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 16px;
+  top: 16px;
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  color: white;
+  background: var(--teal);
+  border-radius: 999px;
+  font-weight: 900;
+}
+
+.inline-action {
+  margin-top: 22px;
 }
 
 .resource-card {
@@ -549,7 +685,9 @@ h3 {
 
   .feature-grid,
   .phase-grid,
-  .evaluation-grid {
+  .evaluation-grid,
+  .artifact-card-grid,
+  .accessibility-list {
     grid-template-columns: 1fr;
   }
 

@@ -45,12 +45,58 @@ const evaluation = [
   "Análisis DAFO de observaciones cualitativas",
 ];
 
-const artifacts = [
-  "Infografía accesible sobre barreras comunicativas",
-  "Plantilla de bitácora de diseño",
-  "Ficha visual de usuario",
-  "Tablero de seguimiento del prototipo",
-  "Demostración digital del funcionamiento esperado",
+const challengeCards = [
+  {
+    title: "Producto final",
+    text: "Prototipo funcional de baja o media fidelidad, documentación del proceso y demostración pública accesible.",
+  },
+  {
+    title: "Trabajo en equipos",
+    text: "Roles rotativos de investigación, diseño, electrónica o programación, documentación y pruebas de accesibilidad.",
+  },
+  {
+    title: "Ejemplos de solución",
+    text: "Alerta luminosa, dispositivo vibratorio, tablero visual, interfaz web accesible o señalización multimodal.",
+  },
+];
+
+const supportArtifacts = [
+  {
+    title: "Infografía accesible",
+    text: "Barreras comunicativas en ambientes técnicos.",
+    mini: "Canal sonoro exclusivo -> barrera | Señal visual equivalente -> ajuste accesible | Texto claro + icono + luz -> comunicación multimodal",
+  },
+  {
+    title: "Ficha de usuario",
+    text: "Necesidad, contexto y requisitos de accesibilidad.",
+    mini: "Contexto | Barrera observada | Preferencia comunicativa | Requisitos | Criterios de éxito",
+  },
+  {
+    title: "Bitácora de diseño",
+    text: "Registro breve de decisiones, pruebas y mejoras.",
+    mini: "Fecha | Decisión | Evidencia | Problema encontrado | Cambio realizado | Próximo paso",
+  },
+  {
+    title: "Tablero de seguimiento",
+    text: "Organiza el avance del equipo durante el ABP.",
+    mini: "Por investigar -> En diseño -> En construcción -> En prueba -> Mejorado -> Listo para socializar",
+  },
+];
+
+const evaluationRows = [
+  ["Pertinencia de la solución", "20 %", "Mapa de barreras y justificación"],
+  ["Funcionamiento y seguridad", "25 %", "Lista de comprobación y demostración"],
+  ["Accesibilidad y usabilidad", "25 %", "Prueba entre pares y rúbrica"],
+  ["Colaboración y documentación", "15 %", "Bitácora, autoevaluación y coevaluación"],
+  ["Comunicación y argumentación", "15 %", "Presentación y portafolio"],
+];
+
+const accessibilityChecks = [
+  "La información sonora tiene una alternativa visual, escrita o vibratoria.",
+  "Los textos son claros, breves y legibles.",
+  "El contraste y el tamaño de los elementos permiten una lectura cómoda.",
+  "Las instrucciones se presentan de manera oral, escrita, visual y demostrativa.",
+  "El usuario participa en las pruebas y puede proponer mejoras.",
 ];
 
 const signImages = [
@@ -69,9 +115,10 @@ export default function Home() {
             <span>Inclusión auditiva</span>
           </a>
           <div className="navlinks">
-            <a href="#proyecto">Proyecto</a>
+            <a href="#reto">Reto</a>
             <a href="#metodologia">Metodología</a>
             <a href="#evaluacion">Evaluación</a>
+            <a href="#accesibilidad">Accesibilidad</a>
             <a href="#evidencias">Evidencias</a>
           </div>
         </nav>
@@ -131,16 +178,42 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section" id="proyecto">
+      <section className="section" id="reto">
         <div className="section-heading">
-          <p className="eyebrow">Contexto</p>
-          <h2>Una propuesta técnica con sentido social</h2>
+          <p className="eyebrow">Reto de aprendizaje</p>
+          <h2>Una barrera puede convertirse en una solución</h2>
           <p>
             El proyecto se diseña para un contexto colombiano de educación
             media técnica articulada con el SENA. Su necesidad surge de
             barreras comunicativas y tecnológicas que pueden limitar la
             participación de estudiantes con discapacidad auditiva en aulas,
             talleres y laboratorios.
+          </p>
+        </div>
+        <div className="challenge-notice">
+          <strong>
+            ¿Cómo diseñar un prototipo tecnológico viable que transforme una
+            barrera comunicativa o sonora en una oportunidad de participación?
+          </strong>
+        </div>
+        <div className="feature-grid challenge-grid">
+          {challengeCards.map((card) => (
+            <article key={card.title}>
+              <h3>{card.title}</h3>
+              <p>{card.text}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="section" id="proyecto">
+        <div className="section-heading">
+          <p className="eyebrow">Fundamentos</p>
+          <h2>Una propuesta técnica con sentido social</h2>
+          <p>
+            La propuesta articula metodología activa, accesibilidad e
+            innovación tecnológica para que el alumnado aprenda construyendo
+            soluciones con impacto en su comunidad educativa.
           </p>
         </div>
         <div className="feature-grid">
@@ -212,7 +285,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="band" id="evaluación">
+      <section className="band" id="evaluacion">
         <div className="section-heading">
           <p className="eyebrow">Evaluación</p>
           <h2>Aprendizaje, prototipo y validación</h2>
@@ -230,6 +303,63 @@ export default function Home() {
             </div>
           ))}
         </div>
+        <div className="evaluation-table-wrap">
+          <table className="evaluation-table">
+            <thead>
+              <tr>
+                <th>Criterio</th>
+                <th>Peso</th>
+                <th>Evidencia principal</th>
+              </tr>
+            </thead>
+            <tbody>
+              {evaluationRows.map(([criterion, weight, evidence]) => (
+                <tr key={criterion}>
+                  <td>{criterion}</td>
+                  <td>{weight}</td>
+                  <td>{evidence}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section className="section" id="artefactos">
+        <div className="section-heading">
+          <p className="eyebrow">Artefactos digitales</p>
+          <h2>Materiales de apoyo para el aula</h2>
+          <p>
+            Estos recursos orientan el trabajo de los equipos y convierten la
+            secuencia ABP en una experiencia visible, documentada y evaluable.
+          </p>
+        </div>
+        <div className="artifact-card-grid">
+          {supportArtifacts.map((artifact, index) => (
+            <article className="artifact-card" key={artifact.title}>
+              <span>{index + 1}</span>
+              <h3>{artifact.title}</h3>
+              <p>{artifact.text}</p>
+              <div className="mini-guide">{artifact.mini}</div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="band" id="accesibilidad">
+        <div className="section-heading">
+          <p className="eyebrow">Accesibilidad</p>
+          <h2>Lista rápida de revisión</h2>
+          <p>
+            Antes de socializar el prototipo, cada equipo revisa si su solución
+            elimina barreras reales y ofrece alternativas de acceso claras.
+          </p>
+        </div>
+        <ul className="accessibility-list">
+          {accessibilityChecks.map((item) => (
+            <li key={item}>{item}</li>
+          ))}
+        </ul>
       </section>
 
       <section className="section evidence" id="evidencias">
@@ -241,11 +371,9 @@ export default function Home() {
             del proyecto. También funciona como enlace principal para incluir
             en el TFM como evidencia digital de la propuesta de innovación.
           </p>
-          <div className="artifact-list">
-            {artifacts.map((item) => (
-              <span key={item}>{item}</span>
-            ))}
-          </div>
+          <a className="secondary-button inline-action" href="#artefactos">
+            Ver artefactos de apoyo
+          </a>
         </div>
         <div className="resource-card text-resource">
           <p className="eyebrow">Referentes visuales</p>
