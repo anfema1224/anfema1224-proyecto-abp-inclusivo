@@ -25,6 +25,8 @@
   },
 ];
 
+import { LscMobileApp } from "./lsc-mobile-app";
+
 const sessions = [
   ["1-2", "Comprender el reto", "Mapa inicial de barreras"],
   ["3-4", "Investigar usuarios y necesidades", "Perfil de usuario y requisitos"],
@@ -115,6 +117,7 @@ export default function Home() {
             <span>Inclusión auditiva</span>
           </a>
           <div className="navlinks">
+            <a href="#diccionario">Diccionario</a>
             <a href="#reto">Reto</a>
             <a href="#metodologia">Metodología</a>
             <a href="#evaluacion">Evaluación</a>
@@ -150,6 +153,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <LscMobileApp />
 
       <section className="section" id="reto">
         <div className="section-heading">
