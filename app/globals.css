@@ -902,7 +902,7 @@ h3 {
 
 .session {
   display: grid;
-  grid-template-columns: 76px minmax(130px, 0.7fr) 1fr;
+  grid-template-columns: 96px minmax(150px, 0.7fr) 1fr;
   gap: 14px;
   align-items: center;
   padding: 14px 16px;
@@ -958,6 +958,32 @@ h3 {
 
 .evaluation-table tr:last-child td {
   border-bottom: 0;
+}
+
+.control-points {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.control-points article {
+  padding: 16px;
+  background: #f8fbfa;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.control-points strong {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--teal);
+}
+
+.control-points p {
+  margin-bottom: 0;
+  color: var(--muted);
+  line-height: 1.55;
 }
 
 .check-item {
@@ -1051,6 +1077,22 @@ h3 {
   gap: 12px;
   padding: 0;
   list-style: none;
+}
+
+.accessibility-modes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.accessibility-modes span {
+  padding: 10px 12px;
+  color: #153d49;
+  background: #dff1f4;
+  border: 1px solid #b7dce0;
+  border-radius: 999px;
+  font-weight: 800;
 }
 
 .accessibility-list li {
@@ -1200,6 +1242,7 @@ h3 {
   .feature-grid,
   .phase-grid,
   .evaluation-grid,
+  .control-points,
   .artifact-card-grid,
   .resource-link-grid,
   .accessibility-list {
@@ -1207,7 +1250,7 @@ h3 {
   }
 
   .session {
-    grid-template-columns: 64px 1fr;
+    grid-template-columns: 86px 1fr;
   }
 
   .session p {

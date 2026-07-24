@@ -1,50 +1,58 @@
-﻿const phases = [
+const phases = [
   {
-    title: "Sensibilización",
-    text: "Reconocer la diversidad auditiva y analizar barreras del entorno escolar y técnico.",
+    title: "Sensibilización y reto",
+    text: "Reconocer barreras comunicativas y comprender la función social del diccionario digital de LSC.",
   },
   {
-    title: "Investigación",
-    text: "Priorizar una necesidad, consultar referentes y formular requisitos accesibles.",
+    title: "Investigación y delimitación",
+    text: "Identificar usuarios, seleccionar categorías, consultar fuentes confiables y definir vocabulario.",
   },
   {
-    title: "Ideación",
-    text: "Comparar alternativas, elegir una solución viable y justificar decisiones.",
+    title: "Diseño y planificación",
+    text: "Construir la plantilla de entradas, el mapa del sitio, los roles y el cronograma de producción.",
   },
   {
-    title: "Construcción",
-    text: "Desarrollar prototipos físicos o digitales con recursos disponibles.",
+    title: "Producción e integración",
+    text: "Elaborar definiciones, recursos audiovisuales y fichas para integrarlas en la plataforma.",
   },
   {
-    title: "Prueba e iteración",
-    text: "Comprobar funcionalidad, accesibilidad y usabilidad para mejorar el diseño.",
+    title: "Prueba, revisión e iteración",
+    text: "Comprobar navegación, accesibilidad, claridad, fuentes y consistencia para registrar mejoras.",
   },
   {
-    title: "Socialización",
-    text: "Presentar el producto, comunicar evidencias y reflexionar sobre el impacto social.",
+    title: "Socialización y reflexión",
+    text: "Presentar el diccionario, justificar decisiones, evaluar el proceso y proyectar actualizaciones.",
   },
 ];
 
 import { LscMobileApp } from "./lsc-mobile-app";
 
 const sessions = [
-  ["1-2", "Comprender el reto", "Mapa inicial de barreras"],
-  ["3-4", "Investigar usuarios y necesidades", "Perfil de usuario y requisitos"],
-  ["5-6", "Idear y seleccionar", "Boceto y matriz de decisión"],
-  ["7-8", "Planificar la construcción", "Diagrama, materiales y plan de trabajo"],
-  ["9-10", "Construir la primera versión", "Prototipo de baja fidelidad"],
-  ["11-12", "Integrar accesibilidad", "Versión funcional"],
-  ["13-14", "Probar e iterar", "Registro de pruebas y mejoras"],
-  ["15-16", "Socializar y evaluar", "Presentación, portafolio y reflexión"],
+  ["1", "Comprender el reto de comunicación", "Mapa inicial de barreras y banco preliminar de vocabulario"],
+  ["2", "Reconocer la LSC y una entrada clara", "Criterios de calidad y estructura preliminar"],
+  ["3", "Investigar usuarios y situaciones de uso", "Perfil de usuario y necesidades verificables"],
+  ["4", "Definir alcance, categorías y requisitos", "Documento de alcance y primer punto de autoevaluación"],
+  ["5", "Buscar y registrar fuentes confiables", "Repositorio inicial de fuentes y fichas"],
+  ["6", "Seleccionar el vocabulario definitivo", "Listado de 30 a 40 entradas codificadas"],
+  ["7", "Diseñar la plantilla de las entradas", "Plantilla definitiva y guía de estilo"],
+  ["8", "Planificar roles, archivos y cronograma", "Plan de trabajo y segundo punto de autoevaluación"],
+  ["9", "Preparar la producción audiovisual", "Protocolo audiovisual, guion técnico y video de prueba"],
+  ["10", "Producir el primer lote de entradas", "Primer lote y 50 % del contenido de la categoría"],
+  ["11", "Completar y corregir las entradas", "Totalidad de entradas preliminares y registro de cambios"],
+  ["12", "Integrar el diccionario en la plataforma", "Primera versión navegable y tercer punto de autoevaluación"],
+  ["13", "Realizar pruebas de usabilidad y accesibilidad", "Informe de usabilidad y lista priorizada de mejoras"],
+  ["14", "Revisar la calidad de las señas y fuentes", "Registro de revisión y entradas corregidas o marcadas"],
+  ["15", "Mejorar el producto y preparar socialización", "Versión final candidata, guion y portafolio organizado"],
+  ["16", "Socializar, evaluar y reflexionar", "Diccionario final, presentación pública y reflexión metacognitiva"],
 ];
 
 const evaluation = [
-  "Rúbrica analítica del prototipo inclusivo",
-  "Listas de chequeo de accesibilidad",
-  "Bitácora de diseño y portafolio de evidencias",
-  "Autoevaluación y coevaluación",
-  "Validación por juicio experto con escala Likert",
-  "Análisis DAFO de observaciones cualitativas",
+  "Evaluación diagnóstica al activar saberes previos en cada sesión",
+  "Seguimiento formativo con bitácora, portafolio y listas de verificación",
+  "Pruebas entre pares de navegación, claridad, fuentes y accesibilidad",
+  "Autoevaluación reflexiva en las sesiones 4, 8, 12 y 16",
+  "Coevaluación, heteroevaluación y valoración del producto final",
+  "Reflexión metacognitiva con evidencias y acciones de mejora",
 ];
 
 const challengeCards = [
@@ -63,19 +71,38 @@ const challengeCards = [
 ];
 
 const evaluationRows = [
-  ["Pertinencia de la solución", "20 %", "Mapa de barreras y justificación"],
-  ["Funcionamiento y seguridad", "25 %", "Lista de comprobación y demostración"],
-  ["Accesibilidad y usabilidad", "25 %", "Prueba entre pares y rúbrica"],
-  ["Colaboración y documentación", "15 %", "Bitácora, autoevaluación y coevaluación"],
-  ["Comunicación y argumentación", "15 %", "Presentación y portafolio"],
+  ["Pertinencia del vocabulario", "Proceso", "Banco de palabras, matriz de selección y categorías"],
+  ["Calidad documental de entradas", "Proceso", "Fichas, fuentes, definiciones y estado de revisión"],
+  ["Funcionamiento técnico", "Producto", "Prueba de enlaces, buscador, navegación e integración"],
+  ["Accesibilidad y usabilidad", "Producto", "Lista de verificación y pruebas entre pares"],
+  ["Colaboración y documentación", "Proceso", "Bitácora, roles, portafolio y registro de cambios"],
+  ["Presentación y reflexión individual", "Cierre", "Socialización, coevaluación y registro metacognitivo"],
+];
+
+const controlPoints = [
+  ["Sesión 4", "Comprensión del reto y alcance del diccionario"],
+  ["Sesión 8", "Investigación, roles y planificación de producción"],
+  ["Sesión 12", "Producción, integración y primera versión navegable"],
+  ["Sesión 16", "Progreso final, aprendizajes transferibles y mejora futura"],
 ];
 
 const accessibilityChecks = [
-  "La información sonora tiene una alternativa visual, escrita o vibratoria.",
-  "Los textos son claros, breves y legibles.",
-  "El contraste y el tamaño de los elementos permiten una lectura cómoda.",
-  "Las instrucciones se presentan de manera oral, escrita, visual y demostrativa.",
-  "El usuario participa en las pruebas y puede proponer mejoras.",
+  "Presentar instrucciones en formatos oral, escrito, visual y demostrativo.",
+  "Subtitular materiales audiovisuales y anticipar vocabulario técnico clave.",
+  "Usar pictogramas, diagramas, ejemplos terminados o parcialmente resueltos.",
+  "Permitir entregas escritas, visuales, audiovisuales, prácticas, orales o signadas.",
+  "Organizar roles rotativos y canales de comunicación visibles en cada equipo.",
+  "Comprobar contraste, tamaño, legibilidad y alternativas a la información sonora.",
+  "Coordinar ajustes razonables con el personal de apoyo y el estudiante.",
+];
+
+const accessibilityModes = [
+  "Textos claros",
+  "Apoyos visuales",
+  "Subtítulos",
+  "Demostraciones",
+  "Tiempos flexibles",
+  "Comunicación preferida",
 ];
 
 const resourceLinks = [
@@ -239,8 +266,9 @@ export default function Home() {
           <p className="eyebrow">Metodología</p>
           <h2>Fases del proyecto</h2>
           <p>
-            La secuencia mantiene opciones de acceso y expresión coherentes con
-            el DUA, mientras organiza el trabajo en ciclos breves de diseño.
+            La secuencia articula ABP, aprendizaje significativo, trabajo
+            colaborativo y ciclos breves de diseño para construir el
+            diccionario digital de LSC como prototipo común.
           </p>
         </div>
         <div className="phase-grid">
@@ -259,11 +287,11 @@ export default function Home() {
           />
           <div>
             <p className="eyebrow">Prototipado</p>
-            <h3>De la idea al dispositivo accesible</h3>
+            <h3>Del vocabulario a una plataforma navegable</h3>
             <p>
-              La escena refuerza el enfoque práctico del ABP: observar,
-              conectar, probar y mejorar con evidencias visibles para todo el
-              equipo.
+              Cada equipo aporta categorías y entradas específicas: investiga
+              fuentes, produce recursos, valida la claridad de las señas y
+              registra mejoras.
             </p>
           </div>
         </div>
@@ -276,13 +304,13 @@ export default function Home() {
           <p>
             La duración prevista es de ocho semanas, con dos sesiones semanales
             de 90 minutos. La distribución puede ajustarse al calendario
-            institucional y a la disponibilidad del taller.
+            institucional y a la disponibilidad tecnológica.
           </p>
         </div>
         <div className="session-list" aria-label="Sesiones del proyecto">
-          {sessions.map(([weeks, title, product]) => (
-            <div className="session" key={weeks}>
-              <span>{weeks}</span>
+          {sessions.map(([sessionNumber, title, product]) => (
+            <div className="session" key={sessionNumber}>
+              <span>Sesión {sessionNumber}</span>
               <strong>{title}</strong>
               <p>{product}</p>
             </div>
@@ -293,11 +321,11 @@ export default function Home() {
       <section className="band" id="evaluacion">
         <div className="section-heading">
           <p className="eyebrow">Evaluación</p>
-          <h2>Aprendizaje, prototipo y validación</h2>
+          <h2>Evaluación diagnóstica, formativa y sumativa</h2>
           <p>
-            La evaluación combina seguimiento formativo, producto final y juicio
-            experto. El análisis cuantitativo se complementa con una lectura
-            cualitativa mediante matriz DAFO.
+            Cada sesión activa saberes previos y cierra con una evidencia que
+            alimenta el producto. La bitácora, el portafolio, las pruebas entre
+            pares y la retroalimentación regulan el aprendizaje.
           </p>
         </div>
         <div className="evaluation-grid">
@@ -312,8 +340,8 @@ export default function Home() {
           <table className="evaluation-table">
             <thead>
               <tr>
-                <th>Criterio</th>
-                <th>Peso</th>
+                <th>Foco</th>
+                <th>Momento</th>
                 <th>Evidencia principal</th>
               </tr>
             </thead>
@@ -327,6 +355,14 @@ export default function Home() {
               ))}
             </tbody>
           </table>
+        </div>
+        <div className="control-points" aria-label="Puntos de control de autoevaluación">
+          {controlPoints.map(([point, description]) => (
+            <article key={point}>
+              <strong>{point}</strong>
+              <p>{description}</p>
+            </article>
+          ))}
         </div>
       </section>
 
@@ -351,11 +387,17 @@ export default function Home() {
       <section className="band" id="accesibilidad">
         <div className="section-heading">
           <p className="eyebrow">Accesibilidad</p>
-          <h2>Lista rápida de revisión</h2>
+          <h2>DUA desde el diseño</h2>
           <p>
-            Antes de socializar el prototipo, cada equipo revisa si su solución
-            elimina barreras reales y ofrece alternativas de acceso claras.
+            Las medidas de accesibilidad no se agregan al final: se incorporan
+            desde la planeación para que ninguna tarea dependa exclusivamente de
+            escuchar o hablar.
           </p>
+        </div>
+        <div className="accessibility-modes" aria-label="Formas de acceso y participación">
+          {accessibilityModes.map((mode) => (
+            <span key={mode}>{mode}</span>
+          ))}
         </div>
         <ul className="accessibility-list">
           {accessibilityChecks.map((item) => (
