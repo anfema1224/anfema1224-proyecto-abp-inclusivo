@@ -26,6 +26,7 @@ const phases = [
 ];
 
 import { LscMobileApp } from "./lsc-mobile-app";
+import { LiveTranscriber } from "./live-transcriber";
 
 const sessions = [
   ["1", "Comprender el reto de comunicación", "Mapa inicial de barreras y banco preliminar de vocabulario"],
@@ -159,6 +160,7 @@ export default function Home() {
             <span>Inclusión auditiva</span>
           </a>
           <div className="navlinks">
+            <a href="#transcripcion">Transcripción</a>
             <a href="#diccionario">Diccionario</a>
             <a href="#reto">Reto</a>
             <a href="#metodologia">Metodología</a>
@@ -364,6 +366,20 @@ export default function Home() {
             </article>
           ))}
         </div>
+      </section>
+
+      <section className="band transcription-section" id="transcripcion">
+        <div className="section-heading">
+          <p className="eyebrow">Accesibilidad en tiempo real</p>
+          <h2>Subtítulos inclusivos con GPT Transcribe</h2>
+          <p>
+            Activa el micrófono para transformar la voz en texto casi en tiempo
+            real. El sistema identifica palabras que ya existen en el
+            diccionario de Lengua de Señas Colombiana y muestra sus referencias
+            visuales automáticamente.
+          </p>
+        </div>
+        <LiveTranscriber />
       </section>
 
       <section className="section dictionary-section" id="prototipos">
