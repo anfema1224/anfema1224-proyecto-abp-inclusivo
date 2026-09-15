@@ -1,3 +1,10 @@
+export async function GET() {
+  return Response.json({
+    configured: Boolean(process.env.OPENAI_API_KEY),
+    model: "gpt-transcribe",
+  });
+}
+
 export const dynamic = "force-dynamic";
 
 const MAX_AUDIO_BYTES = 10 * 1024 * 1024;
