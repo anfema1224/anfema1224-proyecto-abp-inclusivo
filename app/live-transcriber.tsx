@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState, type CSSProperties } from "react";
 import { lscEntries } from "./lsc-dictionary";
 
 const CHUNK_MS = 5000;
@@ -205,7 +205,7 @@ export function LiveTranscriber() {
     }
   }
 
-  const captionStyle = {
+  const captionStyle: CSSProperties = {
     fontSize: `${fontSize}px`,
     fontFamily,
     color: textColor,
