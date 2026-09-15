@@ -1314,3 +1314,237 @@ h3 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
+
+
+/* Inclusive GPT transcription */
+.transcription-section {
+  background:
+    radial-gradient(circle at top right, rgba(15, 118, 110, 0.08), transparent 32%),
+    #f4f8f5;
+}
+
+.transcriber-shell {
+  width: min(1180px, 100%);
+  margin: 0 auto;
+  padding: clamp(18px, 3vw, 32px);
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  box-shadow: 0 24px 70px rgba(23, 33, 29, 0.1);
+}
+
+.transcriber-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 20px;
+}
+
+.transcriber-controls > div:first-child {
+  flex: 1;
+}
+
+.transcriber-controls strong {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.02rem;
+}
+
+.transcriber-controls p {
+  margin: 8px 0 0;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.live-indicator {
+  display: inline-block;
+  width: 11px;
+  height: 11px;
+  margin-right: 8px;
+  background: #a7b1ac;
+  border-radius: 999px;
+}
+
+.live-indicator.is-live {
+  background: #c53030;
+  box-shadow: 0 0 0 6px rgba(197, 48, 48, 0.12);
+  animation: transcription-pulse 1.5s infinite;
+}
+
+@keyframes transcription-pulse {
+  50% {
+    box-shadow: 0 0 0 10px rgba(197, 48, 48, 0);
+  }
+}
+
+.transcriber-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.transcriber-actions button {
+  border: 0;
+  cursor: pointer;
+  font: inherit;
+}
+
+.transcriber-actions button:disabled {
+  cursor: not-allowed;
+  opacity: 0.48;
+}
+
+.danger-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 0 18px;
+  color: white;
+  background: #a62d2d;
+  border-radius: 7px;
+  font-weight: 800;
+}
+
+.transcriber-error {
+  margin: 0 0 16px;
+  padding: 12px 14px;
+  color: #7f1d1d;
+  background: #fff1f1;
+  border: 1px solid #f3c7c7;
+  border-radius: 8px;
+}
+
+.caption-screen {
+  min-height: 210px;
+  max-height: 430px;
+  overflow-y: auto;
+  padding: clamp(24px, 4vw, 44px);
+  color: white;
+  background: #111815;
+  border-radius: 10px;
+  font-size: clamp(1.4rem, 3vw, 2.35rem);
+  font-weight: 700;
+  line-height: 1.45;
+  letter-spacing: 0.01em;
+}
+
+.caption-screen span {
+  color: #aeb9b4;
+  font-weight: 500;
+}
+
+.sign-match-panel {
+  margin-top: 22px;
+  padding-top: 22px;
+  border-top: 1px solid var(--line);
+}
+
+.sign-match-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 16px;
+}
+
+.sign-match-heading h3 {
+  margin-bottom: 0;
+  font-size: 1.18rem;
+}
+
+.sign-match-heading > span {
+  flex: 0 0 auto;
+  padding: 7px 10px;
+  color: var(--teal-dark);
+  background: var(--soft);
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.sign-match-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 12px;
+}
+
+.sign-match-grid article {
+  display: grid;
+  grid-template-columns: 92px 1fr;
+  gap: 14px;
+  min-height: 116px;
+  padding: 12px;
+  background: #f8faf8;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+}
+
+.sign-match-grid img {
+  width: 92px;
+  height: 92px;
+  object-fit: contain;
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+}
+
+.sign-match-grid strong {
+  display: block;
+  margin-bottom: 6px;
+}
+
+.sign-match-grid p {
+  display: -webkit-box;
+  margin: 0;
+  overflow: hidden;
+  color: var(--muted);
+  font-size: 0.83rem;
+  line-height: 1.45;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+}
+
+.sign-match-empty {
+  margin-bottom: 0;
+  padding: 18px;
+  color: var(--muted);
+  background: #f8faf8;
+  border: 1px dashed #cbd8cf;
+  border-radius: 8px;
+  line-height: 1.55;
+}
+
+@media (max-width: 760px) {
+  .transcriber-controls,
+  .sign-match-heading {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .transcriber-actions {
+    justify-content: stretch;
+  }
+
+  .transcriber-actions button {
+    flex: 1 1 150px;
+  }
+
+  .caption-screen {
+    min-height: 180px;
+  }
+}
+
+@media (max-width: 520px) {
+  .sign-match-grid article {
+    grid-template-columns: 74px 1fr;
+  }
+
+  .sign-match-grid img {
+    width: 74px;
+    height: 74px;
+  }
+}
