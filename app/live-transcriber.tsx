@@ -1,9 +1,16 @@
 "use client";
 
-import { useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { lscEntries } from "./lsc-dictionary";
 
 const CHUNK_MS = 5000;
+
+const fontOptions = [
+  { label: "Arial", value: "Arial, Helvetica, sans-serif" },
+  { label: "Verdana", value: "Verdana, Geneva, sans-serif" },
+  { label: "Georgia", value: "Georgia, 'Times New Roman', serif" },
+  { label: "Monoespaciada", value: "'Courier New', Courier, monospace" },
+];
 
 function normalize(value: string) {
   return value
@@ -20,10 +27,26 @@ export function LiveTranscriber() {
   const [status, setStatus] = useState("Listo para iniciar");
   const [transcript, setTranscript] = useState("");
   const [error, setError] = useState("");
+  const [fontSize, setFontSize] = useState(36);
+  const [fontFamily, setFontFamily] = useState(fontOptions[0].value);
+  const [textColor, setTextColor] = useState("#ffffff");
+  const [backgroundColor, setBackgroundColor] = useState("#111815");
+  const [textStyle, setTextStyle] = useState<"normal" | "bold" | "italic">("bold");
+  const [isFullscreen, setIsFullscreen] = useState(false);
+  const shellRef = useRef<HTMLDivElement | null>(null);
   const streamRef = useRef<MediaStream | null>(null);
   const recorderRef = useRef<MediaRecorder | null>(null);
   const chunksRef = useRef<Blob[]>([]);
   const listeningRef = useRef(false);
+
+  useEffect(() => {
+    const syncFullscreen = () => {
+      setIsFullscreen(document.fullscreenElement === shellRef.current);
+    };
+
+    document.addEventListener("fullscreenchange", syncFullscreen);
+    return () => document.removeEventListener("fullscreenchange", syncFullscreen);
+  }, []);
 
   const matchedSigns = useMemo(() => {
     const cleanTranscript = ` ${normalize(transcript)} `;
@@ -168,8 +191,31 @@ export function LiveTranscriber() {
     setStatus(isListening ? "Escuchando y generando subtítulos" : "Listo para iniciar");
   }
 
+  async function toggleFullscreen() {
+    if (!shellRef.current) return;
+
+    try {
+      if (document.fullscreenElement === shellRef.current) {
+        await document.exitFullscreen();
+      } else {
+        await shellRef.current.requestFullscreen();
+      }
+    } catch {
+      setError("El navegador no permitió ampliar la herramienta a pantalla completa.");
+    }
+  }
+
+  const captionStyle = {
+    fontSize: `${fontSize}px`,
+    fontFamily,
+    color: textColor,
+    backgroundColor,
+    fontWeight: textStyle === "bold" ? 800 : 500,
+    fontStyle: textStyle === "italic" ? "italic" : "normal",
+  };
+
   return (
-    <div className="transcriber-shell">
+    <div className="transcriber-shell" ref={shellRef}>
       <div className="transcriber-controls">
         <div>
           <span
@@ -209,7 +255,73 @@ export function LiveTranscriber() {
           >
             Limpiar
           </button>
+          <button className="secondary-button" type="button" onClick={toggleFullscreen}>
+            {isFullscreen ? "Salir de pantalla completa" : "Pantalla completa"}
+          </button>
         </div>
+      </div>
+
+      <div className="caption-preferences" aria-label="Personalización de subtítulos">
+        <label>
+          <span>Tamaño</span>
+          <input
+            type="range"
+            min="22"
+            max="72"
+            step="2"
+            value={fontSize}
+            onChange={(event) => setFontSize(Number(event.target.value))}
+          />
+          <strong>{fontSize}px</strong>
+        </label>
+
+        <label>
+          <span>Tipografía</span>
+          <select
+            value={fontFamily}
+            onChange={(event) => setFontFamily(event.target.value)}
+          >
+            {fontOptions.map((font) => (
+              <option key={font.label} value={font.value}>
+                {font.label}
+              </option>
+            ))}
+          </select>
+        </label>
+
+        <label>
+          <span>Estilo</span>
+          <select
+            value={textStyle}
+            onChange={(event) =>
+              setTextStyle(event.target.value as "normal" | "bold" | "italic")
+            }
+          >
+            <option value="normal">Normal</option>
+            <option value="bold">Negrita</option>
+            <option value="italic">Cursiva</option>
+          </select>
+        </label>
+
+        <label className="color-setting">
+          <span>Color del texto</span>
+          <input
+            type="color"
+            value={textColor}
+            onChange={(event) => setTextColor(event.target.value)}
+            aria-label="Color del texto"
+          />
+        </label>
+
+        <label className="color-setting">
+          <span>Color de fondo</span>
+          <input
+            type="color"
+            value={backgroundColor}
+            onChange={(event) => setBackgroundColor(event.target.value)}
+            aria-label="Color de fondo"
+          />
+        </label>
       </div>
 
       {error ? (
@@ -220,12 +332,13 @@ export function LiveTranscriber() {
 
       <div
         className="caption-screen"
+        style={captionStyle}
         role="log"
         aria-live="polite"
         aria-label="Subtítulos generados"
       >
         {transcript || (
-          <span>
+          <span style={{ color: textColor, opacity: 0.62 }}>
             Pulsa “Iniciar micrófono” y comienza a hablar. Los subtítulos
             aparecerán aquí.
           </span>
