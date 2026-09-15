@@ -25,8 +25,6 @@ const phases = [
   },
 ];
 
-import { LscMobileApp } from "./lsc-mobile-app";
-import { LiveTranscriber } from "./live-transcriber";
 
 const sessions = [
   ["1", "Comprender el reto de comunicación", "Mapa inicial de barreras y banco preliminar de vocabulario"],
@@ -160,8 +158,7 @@ export default function Home() {
             <span>Inclusión auditiva</span>
           </a>
           <div className="navlinks">
-            <a href="#transcripcion">Transcripción</a>
-            <a href="#diccionario">Diccionario</a>
+            <a href="#artilugios">Artilugios Digitales</a>
             <a href="#reto">Reto</a>
             <a href="#metodologia">Metodología</a>
             <a href="#evaluacion">Evaluación</a>
@@ -179,9 +176,10 @@ export default function Home() {
               educativa de estudiantes con discapacidad auditiva
             </h1>
             <p className="lead">
-              Portal digital que reúne la ruta ABP, el cronograma, la evaluación
-              y un diccionario móvil de Lengua de Señas Colombiana para apoyar
-              experiencias accesibles en media técnica articulada con el SENA.
+              Portal digital que reúne la ruta ABP, la evaluación y una colección
+              de artilugios digitales diseñados para disminuir barreras
+              comunicativas y favorecer la participación de estudiantes con
+              discapacidad auditiva en la media técnica articulada con el SENA.
             </p>
           </div>
         </div>
@@ -269,8 +267,9 @@ export default function Home() {
           <h2>Fases del proyecto</h2>
           <p>
             La secuencia articula ABP, aprendizaje significativo, trabajo
-            colaborativo y ciclos breves de diseño para construir el
-            diccionario digital de LSC como prototipo común.
+            colaborativo y ciclos breves de diseño para construir y validar
+            prototipos tecnológicos accesibles que respondan a barreras reales
+            de comunicación y participación.
           </p>
         </div>
         <div className="phase-grid">
@@ -368,36 +367,105 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="band transcription-section" id="transcripcion">
+      <section className="section artilugios-section" id="artilugios">
         <div className="section-heading">
-          <p className="eyebrow">Accesibilidad en tiempo real</p>
-          <h2>Subtítulos inclusivos con GPT Transcribe</h2>
+          <p className="eyebrow">Prototipos para la participación</p>
+          <h2>Artilugios Digitales</h2>
           <p>
-            Activa el micrófono para transformar la voz en texto casi en tiempo
-            real. El sistema identifica palabras que ya existen en el
-            diccionario de Lengua de Señas Colombiana y muestra sus referencias
-            visuales automáticamente.
+            Esta colección materializa el objetivo del proyecto mediante
+            prototipos tecnológicos que transforman barreras comunicativas en
+            apoyos concretos de acceso, autonomía y participación. Cada
+            artilugio ofrece una forma complementaria de presentar la
+            información —textual o visual— para que la experiencia educativa no
+            dependa exclusivamente de escuchar o hablar.
           </p>
         </div>
-        <LiveTranscriber />
-      </section>
 
-      <section className="section dictionary-section" id="prototipos">
-        <div className="section-heading">
-          <p className="eyebrow">Prototipos digitales</p>
-          <h2>Diccionario móvil de Lengua de Señas Colombiana</h2>
-          <p>
-            Este prototipo permite consultar señas por palabra, filtrar por
-            letra y revisar imágenes de referencia para apoyar la comunicación
-            visual en el aula.
-          </p>
-          <div className="dictionary-quick-facts" aria-label="Resumen del diccionario móvil">
-            <span>42 señas ilustradas a color</span>
-            <span>Búsqueda por palabra</span>
-            <span>Filtro por letra</span>
-          </div>
+        <div className="artilugios-grid">
+          <article className="artilugio-card">
+            <div className="artilugio-preview transcription-preview" aria-hidden="true">
+              <div className="preview-topline">
+                <span className="preview-live-dot" />
+                <span>SUBTÍTULOS EN VIVO</span>
+              </div>
+              <div className="preview-caption">
+                La tecnología puede hacer visible la voz.
+              </div>
+              <div className="preview-settings">
+                <span>A−</span>
+                <span>A+</span>
+                <span>Texto</span>
+                <span>Fondo</span>
+              </div>
+            </div>
+
+            <div className="artilugio-card-copy">
+              <span className="artilugio-number">01</span>
+              <p className="eyebrow">Accesibilidad auditiva</p>
+              <h3>Voz Visible · Transcriptor accesible</h3>
+              <p>
+                Convierte la voz en subtítulos casi en tiempo real mediante GPT
+                Transcribe. La pantalla puede personalizarse en tamaño,
+                tipografía y colores, y las palabras reconocidas se relacionan
+                con entradas disponibles en el diccionario LSC.
+              </p>
+              <div className="artilugio-features" aria-label="Funciones principales">
+                <span>Subtítulos con IA</span>
+                <span>Vista personalizable</span>
+                <span>Conexión con LSC</span>
+              </div>
+              <a
+                className="primary-button artilugio-open"
+                href="/artilugios/transcriptor"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Abrir transcriptor
+              </a>
+              <small>Se abre en una vista ampliada para su uso.</small>
+            </div>
+          </article>
+
+          <article className="artilugio-card">
+            <div className="artilugio-preview dictionary-preview" aria-hidden="true">
+              <div className="preview-search">Buscar seña…</div>
+              <div className="preview-dictionary-content">
+                <img src="/lsc-featured/hola.png" alt="" />
+                <div>
+                  <strong>HOLA</strong>
+                  <span>Lengua de Señas Colombiana</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="artilugio-card-copy">
+              <span className="artilugio-number">02</span>
+              <p className="eyebrow">Comunicación visual</p>
+              <h3>Diccionario Visual LSC</h3>
+              <p>
+                Facilita la consulta de vocabulario en Lengua de Señas
+                Colombiana mediante búsqueda, filtros e imágenes de referencia.
+                Funciona como apoyo visual para anticipar conceptos, resolver
+                necesidades comunicativas y ampliar las formas de acceso a la
+                información.
+              </p>
+              <div className="artilugio-features" aria-label="Funciones principales">
+                <span>Búsqueda por palabra</span>
+                <span>Filtro alfabético</span>
+                <span>Referencias visuales</span>
+              </div>
+              <a
+                className="primary-button artilugio-open"
+                href="/artilugios/diccionario"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Abrir diccionario
+              </a>
+              <small>Se abre en una vista ampliada para su uso.</small>
+            </div>
+          </article>
         </div>
-        <LscMobileApp />
       </section>
 
       <section className="band" id="accesibilidad">
@@ -431,8 +499,8 @@ export default function Home() {
             del proyecto. También funciona como enlace principal para incluir
             en el TFM como evidencia digital de la propuesta de innovación.
           </p>
-          <a className="secondary-button inline-action" href="#prototipos">
-            Ver prototipos de apoyo
+          <a className="secondary-button inline-action" href="#artilugios">
+            Ver Artilugios Digitales
           </a>
         </div>
         <div className="resource-card text-resource">
