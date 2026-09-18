@@ -518,10 +518,10 @@ export default function Home() {
           </div>
           <a
             className="primary-button full"
-            href="/Proyecto_ABP_ANDRES_FELIPE_MARIN_ajustado_resaltado.docx"
+            href="/TFM_Entrega_18-09-2026.pdf"
             download
           >
-            Descargar TFM ajustado
+            Descargar TFM actualizado
           </a>
         </div>
       </section>
